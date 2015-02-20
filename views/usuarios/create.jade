@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  h1 Cadastro de Usuarios
+  hr
+  a(href="/usuarios" title="Voltar") Voltar
+  br
+  br
+  form(method="POST", action="/usuarios",W role="form")
+    div(class="form-group")
+      label Nome:
+      input(type="text", name="nome", class="form-control")
+    div(class="form-group")
+      label Login:
+      input(type="text", name="user_name", class="form-control")
+    div(class="form-group")
+      label Senha:
+      input(type="password", name="senha", class="form-control")
+    input(type="submit", value="Cadastrar", class="btn btn-sucess")
+    

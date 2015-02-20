@@ -1,0 +1,32 @@
+extends ../layout
+
+block content
+  h1 Pagina de Usuarios
+  hr
+  a(href="/" title="Home") Voltar
+  br
+  a(href="/create" title="Cadastrar") Cadatrar
+  br
+  if msgUpdate
+    div(class="alert alert-info")
+      p Registro atualizado com Sucesso
+  br
+  table(class="table well")
+    thead
+      tr
+        th ID:
+        th Nome:
+        th Senha:
+        th Data:
+        th Ações:
+    tbody
+      each valor, i in lista
+        tr
+          td #{valor._id}
+          td #{valor.nome}
+          td #{valor.senha}
+          td #{valor.cad_date}
+          td 
+            a(href="/usuarios/edit/#{valor._id}", title="Editar", class="btn btn-info") Editar
+            &nbsp
+            a(href="/usuarios/show/#{valor._id}", title="Ver", class="btn btn-primary") Visualizar
